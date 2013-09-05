@@ -34,15 +34,18 @@ ZS.App = ZS.App || function(){
 				//parentContainer.html("pen");
 				parentContainer.html("<button type='button' class='btn btn-success btn-large btn-block btnPrize disabled'>Sipper</button>");
 				//parentContainer.html("<img src = 'images/pen.jpg' alt='Pen'/>");
+				$('#dialog img').attr('src',"images/sipper.png");
 				break;
 			case ZS.Gift.Chocolate:
 				parentContainer.html("<button type='button' class='btn btn-danger btn-large btn-block btnPrize disabled'>Mug</button>");
+				$('#dialog img').attr('src',"images/mug.png");
 				break;	
 			case ZS.Gift.Voucher:
 				parentContainer.html("<button type='button' class='btn btn-danger btn-large btn-block btnPrize disabled'>Mug</button>");
+				$('#dialog img').attr('src',"images/smug.png");
 				break;
 		}
-		
+		$( "#dialog" ).dialog( "open" );
 		
 	};
 
@@ -64,7 +67,25 @@ ZS.App = ZS.App || function(){
 	self.init = function(){
 			console.log("initiliaze");
 			/*  events binding */
-			
+			$(function() {
+				$( "#dialog" ).dialog({
+				open:function(){
+					setInterval(function(){
+				$( "#dialog" ).dialog( "close" );
+			},3000);
+				},
+				closeText: "hide",
+				autoOpen: false,
+				show: {
+					effect: "explode",
+					duration: 500
+					},
+					hide: {
+					effect: "explode",
+					duration: 1000
+		}
+		});
+  });
 
 			/* render boxes */
 			for (var i=1 ; i <= ZS.Constants.Containers ; i++){

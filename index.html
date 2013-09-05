@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    
     <title>ZStart</title>
 
     <!-- Bootstrap core CSS -->
@@ -14,6 +14,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/starter.css" rel="stylesheet">
+	<link href="css/jquery-ui.css" rel="stylesheet">
     <style type="text/css">
       .mainContainer > div {
         margin-top: 10px;
@@ -28,6 +29,9 @@
 		background-position: right;
 		padding-right: 2px;
 	  }
+	  .ui-dialog-titlebar-close {
+  visibility: hidden;
+}
     </style>
   </head>
 
@@ -55,12 +59,16 @@
         <h1>Click on a box to win!</h1>
        	<div class="row mainContainer">
 		
-       	</div>
+       	<div id="dialog" title="You win">
+			<p>Congratulations! You have won a</p>
+			<img src="images\mug.png" />
+		</div>
       </div>
 
     </div><!-- /.container -->
 
   <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="main.js"></script>
    
